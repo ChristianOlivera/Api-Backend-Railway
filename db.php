@@ -1,9 +1,9 @@
 <?php
-$servername = "mysql.railway.internal";
-$username = "root";
-$password = "qeUgUMifUjLaHQbrPAOtBSWcJdKLRFyG";
-$dbname = "railway";
-$port = 3306;
+$servername = getenv('DB_HOST');
+$port = getenv('DB_PORT');
+$dbname = getenv('DB_NAME');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
 
 try {
     $conn = new PDO("mysql:host=$servername;port=$port;dbname=$dbname", $username, $password);
